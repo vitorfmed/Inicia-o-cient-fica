@@ -15,16 +15,14 @@ def importar_imagem():
         label_imagem.config(image=imagem_tk)
         label_imagem.image = imagem_tk
 
-def ajustar_imagem():
-    print("Ajustar imagem")
 
 def salvar_imagem():
     arquivo = filedialog.asksaveasfilename(defaultextension=".png", filetypes=[("PNG", "*.png"), ("JPEG", "*.jpg"), ("Todos os arquivos", "*.*")])
-    print(f"Imagem salva em: {arquivo}")
+    print(f"{arquivo}")
 
 # código
 root = tk.Tk()
-root.title("Interface de Imagem")
+root.title("Iniciação científica")
 root.geometry("500x500")
 root.configure(bg='black')
 
@@ -35,11 +33,16 @@ button_width = 20
 button_height = 2
 
 botao_importar = tk.Button(root, text="Importar imagem", command=importar_imagem, width=button_width, height=button_height)
-botao_ajustar = tk.Button(root, text="Ajustar imagem", command=ajustar_imagem, width=button_width, height=button_height)
+
 botao_salvar = tk.Button(root, text="Salvar imagem", command=salvar_imagem, width=button_width, height=button_height)
 
 botao_salvar.pack(side=tk.BOTTOM, anchor='w', padx=30, pady=5)
-botao_ajustar.pack(side=tk.BOTTOM, anchor='w', padx=30, pady=5)
+
 botao_importar.pack(side=tk.BOTTOM, anchor='w', padx=30, pady=5)
 
 root.mainloop()
+
+# REFERÊNCIAS 
+# https://www.geeksforgeeks.org/working-images-python-pil/ 
+# https://docs.python.org/3/library/tkinter.filedialog.html
+# https://docs.python.org/3/library/tk.html
